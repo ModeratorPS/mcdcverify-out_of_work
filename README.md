@@ -43,7 +43,7 @@ Finally, you only need to fill in the config.json file! <br>
     "dc-server-role-name": "verify"<br>
 }<br>
 <h1>2. Starten</h1>
-Start the Minecraft server and then run <strong>main.js</strong> from the node folder in the terminal!
+Start the Minecraft server and then run <strong>node main.js</strong> from the folder in the terminal!
 <h1>3. Usage</h1>
 Write in the Minecraft Chat <strong>!verify</strong> and you will be guided through the registration process!
 <h1>4. Info</h1>
