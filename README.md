@@ -1,7 +1,7 @@
 # mcdcverify
 A simple system to link Discord with Minecraft!
 
-![Uploading IMG_0716.PNG…]()
+![alt text](http://url/to/img.png)
 
 <h1>1. Setup</h1>
 First, execute the following commands in the terminal:
