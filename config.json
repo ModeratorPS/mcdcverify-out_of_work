@@ -1,0 +1,8 @@
+{
+    "mc-bot-ip": "server-ip",
+    "mc-bot-username": "mc-bot-username",
+    "dc-bot-token": "your-token",
+    "dc-bot-activity": "playing-activity-text",
+    "dc-server-guild-id": "server-guild-id",
+    "dc-server-role-name": "name-of-the-verify-role"
+}
