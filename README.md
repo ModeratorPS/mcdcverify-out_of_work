@@ -22,7 +22,7 @@ Now follow these steps:
 <li><i>Now go back to Bot in the menu and click on RESET TOKEN and then on COPY</i></li>
 </ul>
 <h3>1.3 config.json</h3>
-Download this code and place it in a folder. <br>
+Download this code and place it in a folder. Unzip the .zip file in the folder! <br>
 Finally, you only need to fill in the config.json file! <br>
 <strong>Tutorial:</strong><br>
 {<br>
