@@ -4,6 +4,7 @@ A simple system to link Discord with Minecraft!
 ![alt text](https://github.com/ModeratorPS/mcdcverify/blob/main/IMG_0716.PNG)
 
 <h1>1. Setup</h1>
+Download this code and follow the steps below:
 First, execute the following commands in the terminal:
 <ul>		
 <li><i>npm init</i></li>			
@@ -24,7 +25,6 @@ Now follow these steps:
 <li><i>Now go back to Bot in the menu and click on RESET TOKEN and then on COPY</i></li>
 </ul>
 <h3>1.3 config.json</h3>
-Download this code and place it in a folder. Unzip the .zip file in the folder! <br>
 Finally, you only need to fill in the config.json file! <br>
 <strong>Tutorial:</strong><br>
 {<br>
