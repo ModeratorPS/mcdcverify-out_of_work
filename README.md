@@ -4,7 +4,7 @@ A simple system to link Discord with Minecraft!
 ![alt text](https://github.com/ModeratorPS/mcdcverify/blob/main/IMG_0716.PNG)
 
 <h1>1. Setup</h1>
-Download this code and follow the steps below:
+Download this code and follow the steps below: <br>
 First, execute the following commands in the terminal:
 <ul>		
 <li><i>npm init</i></li>			
