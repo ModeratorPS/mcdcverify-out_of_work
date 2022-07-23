@@ -8,7 +8,7 @@ First, execute the following commands in the terminal:
 <ul>		
 <li><i>npm init</i></li>			
 </ul>
-Now you will discover the .zip file. It contains the Node module! <br>
+Download this file ( https://drive.google.com/file/d/1V_e4s2mAY4EdFjY28FI9RQVJ0tWuMyGy/view?usp=sharing ) and also put it in the folder where the project is inside! Now you will discover the .zip file. It contains the Node module! <br>
 If there is an error, please contact me on Discord: ModeratorPS#9225
 <h3>1.1 Minecraft Server</h3>
 In order for the Minecraft bot to be able to enter the server, you must set <strong>online-mode</strong> to false <strong>(online-mode=false)</strong> in the <strong>server.properties</strong> file on your server.
