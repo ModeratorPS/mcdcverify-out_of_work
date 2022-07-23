@@ -1,4 +1,5 @@
 const Discord = require('discord.js')
+const fs = require('fs');
 const { Client, Collection, Intents, MessageEmbed, MessageActionRow, MessageButton, GuildMember, RoleManager, GuildMemberRoleManager, Modal, TextInputComponent, MessageSelectMenu } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_VOICE_STATES, Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 const config = require('./config.json');
@@ -18,7 +19,7 @@ const bot = mineflayer.createBot({
 bot.on('chat', (username, message) => {
     if (message.startsWith("!verify")) {
         let args = message.split(" ") //.slice(3).join(" ").split(",")
-        if (!args[1]) return bot.chat("Usage: !verify <Discord user id (example: 807592445843865601)>")
+        if (!args[1]) return bot.chat("Usage: !verify <Discord user id (Find out your user id with !id on Discord!)>")
         bot.chat(`Search ${args[1]}`)
         const successembed = new MessageEmbed()
             .setTitle("Verify-System")
@@ -54,5 +55,17 @@ client.once('ready', () => {
     console.log('The Client is Ready!')
     client.user.setActivity({name: `${config['dc-bot-activity']}`, type: "PLAYING"})
 });
+
+client.on('messageCreate', message => {
+    if (message.content.startsWith("!id")) {
+        const idembed = new MessageEmbed()
+            .setTitle("Your Discord ID:")
+            .setDescription("> " + message.author.id)
+            .setColor("cdb73c")
+        message.reply({
+            embeds: [idembed]
+        })
+    }
+})
 
 client.login(config['dc-bot-token']);
