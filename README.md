@@ -8,7 +8,8 @@ Download this code and follow the steps below: <br>
 Download this file ( https://drive.google.com/file/d/1V_e4s2mAY4EdFjY28FI9RQVJ0tWuMyGy/view?usp=sharing ) and also put it in the folder where the project is inside! Now you will discover the .zip file. It contains the Node module! <br>
 Now execute the following commands in the terminal:
 <ul>		
-<li><i>npm init</i></li>			
+<li><i>npm init</i></li>
+<li><i>npm install</i></li>
 </ul>
 If there is an error, please contact me on Discord: ModeratorPS#9225
 <h3>1.1 Minecraft Server</h3>
