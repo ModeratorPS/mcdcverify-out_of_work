@@ -6,9 +6,9 @@ A simple system to link Discord with Minecraft!
 <h1>1. Setup</h1>
 First, execute the following commands in the terminal:
 <ul>		
-<li><i>npm init</i></li>		
-<li><i>npm install </i></li>	
+<li><i>npm init</i></li>			
 </ul>
+Now you will discover the .zip file. It contains the Node module! <br>
 If there is an error, please contact me on Discord: ModeratorPS#9225
 <h3>1.1 Minecraft Server</h3>
 In order for the Minecraft bot to be able to enter the server, you must set <strong>online-mode</strong> to false <strong>(online-mode=false)</strong> in the <strong>server.properties</strong> file on your server.
