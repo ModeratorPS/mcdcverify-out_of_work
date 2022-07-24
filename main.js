@@ -8,6 +8,9 @@ const { pathfinder, Movements, goals } = require('mineflayer-pathfinder');
 const { error } = require('console');
 const hostn = config['mc-bot-ip'];
 
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
+
+
 const bot = mineflayer.createBot({
     host: `${hostn}`,
     username: `${config['mc-bot-username']}`,
@@ -26,7 +29,7 @@ bot.on('chat', (username, message) => {
         const unlinkbutton = new MessageActionRow()
             .addComponents(
             new MessageButton()
-                .setStyle("DANGER")
+                .setStyle("SUCCESS")
                 .setCustomId("unlink")
                 .setLabel("Unlink")
             )
@@ -38,11 +41,11 @@ bot.on('chat', (username, message) => {
                     const requirerole = role2.id
                     guild.members.cache.filter(n => n.user.id = `${args[1]}`).forEach(member => member.roles.add(requirerole))
                 })
+                bot.chat(`${args[1]} verifyed!`)
                 user.send({
                     embeds: [successembed],
                     components: [unlinkbutton]
                 })
-                bot.chat(`${args[1]} verifyed!`)
             }).catch(err => {
                 console.error(err)
                 bot.chat("User not found!")
@@ -52,25 +55,47 @@ bot.on('chat', (username, message) => {
 });
 
 client.on('interactionCreate', interaction => {
-    const unverifyembed = new MessageEmbed()
-        .setTitle("Verify-System")
-        .setColor('b31919')
-        .setDescription('You have unlinked your Minecraft account to Discord!')
-    client.guilds.fetch(`${config['dc-server-guild-id']}`).then(guild => {
-        client.users.fetch(`${interaction.user.id}`).then(user => {
+    if (interaction.isButton()) {
+        if (interaction.customId === "unlink") {
+            const unverifyembed = new MessageEmbed()
+                .setTitle("Verify-System")
+                .setColor('b31919')
+                .setDescription('You have unlinked your Minecraft account to Discord!')
+            const unlinkbuttonused = new MessageActionRow()
+                .addComponents(
+                new MessageButton()
+                    .setStyle("DANGER")
+                    .setCustomId("delmes")
+                    .setLabel("Unlinked")
+                    .setDisabled(true)
+                )
+            const unlinkbuttonused2 = new MessageActionRow()
+                .addComponents(
+                new MessageButton()
+                    .setStyle("SECONDARY")
+                    .setCustomId("delmes1")
+                    .setLabel("Klick to delete")
+                )
             client.guilds.fetch(`${config['dc-server-guild-id']}`).then(guild => {
-                let roleName2 = `${config['dc-server-role-name']}`;
-                const role2 = guild.roles.cache.find(x2 => x2.name === roleName2);
-                const requirerole = role2.id
-                guild.members.cache.filter(n => n.user.id = `${interaction.user.id}`).forEach(member => member.roles.remove(requirerole))
-                user.send({
-                    embeds: [unverifyembed]
+                client.users.fetch(`${interaction.user.id}`).then(user => {
+                    client.guilds.fetch(`${config['dc-server-guild-id']}`).then(guild => {
+                        let roleName2 = `${config['dc-server-role-name']}`;
+                        const role2 = guild.roles.cache.find(x2 => x2.name === roleName2);
+                        const requirerole = role2.id
+                        guild.members.cache.filter(n => n.user.id = `${interaction.user.id}`).forEach(member => member.roles.remove(requirerole))
+                        interaction.message.edit({
+                            embeds: [unverifyembed],
+                            components: [unlinkbuttonused, unlinkbuttonused2]
+                        })
+                    })
+                }).catch(err => {
+                    console.error(err)
                 })
             })
-        }).catch(err => {
-            console.error(err)
-        })
-    })
+        } else if (interaction.customId === "delmes1") {
+            interaction.message.delete()
+        }
+    }
 })
 
 client.once('ready', () => {
