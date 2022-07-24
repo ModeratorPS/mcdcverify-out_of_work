@@ -51,5 +51,5 @@ Start the Minecraft server and then run <strong>node main.js</strong> from the f
 Write in the Minecraft Chat <strong>!verify</strong> and you will be guided through the registration process!
 <h1>4. Info</h1>
 If there is an error, please contact me on Discord: ModeratorPS#9225
-<h2>Current version: v1.0-Beta</h2> <br><br>
+<h2>Current version: v1.1</h2> <br><br>
 <h1>You are welcome to use the system, but you must not pass it off as your own!</h1>
